@@ -1,0 +1,23 @@
+<p>lista works!</p>
+<!-- <div *ngIf="heroeBorrado !== '' "> // ngif es como si fuera una un id normal
+    <h3>Heroe borrado <small>{{heroeBorrado}}</small></h3>
+
+</div> -->
+
+
+<div *ngIf="heroeBorrado; else noBorrar"> 
+    <h3>Heroe borrado <small>{{heroeBorrado}}</small></h3>
+</div>
+
+<ng-template #noBorrar>
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+<button (click)="borrar()">Borrar</button>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i + 1}}-{{heroe}}
+    </li>
+</ul>
